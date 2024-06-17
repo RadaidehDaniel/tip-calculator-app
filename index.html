@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link href="style.css" rel="stylesheet" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo">SPLITTER</h1>
+    </header>
+    <main>
+      <!-- calculator -->
+      <div class="calculator">
+        <!-- calculator form -->
+        <div class="calculator__form">
+          <!-- form bill -->
+          <div class="calculator__form-bill">
+            <div class="bill-header">
+              <label class="bill-label" for="bill">Bill</label>
+              <p id="bill-error">Can't be zero or negative</p>
+            </div>
+            <input id="bill" type="number" value="100" />
+          </div>
+          <!-- form bill end-->
+          <!-- form tip -->
+          <div class="calculator__form-tip">
+            <div class="tip-header">
+              <p class="tip-label">Select tip %</p>
+              <p id="tip-error">Can't be zero or negative</p>
+            </div>
+            <div class="tip-options">
+              <div class="tip-radio">
+                <input type="radio" id="tip-5" name="tip" value="5" />
+                <label for="tip-5">5%</label>
+              </div>
+              <div class="tip-radio">
+                <input type="radio" id="tip-10" name="tip" value="10" />
+                <label for="tip-10">10%</label>
+              </div>
+              <div class="tip-radio">
+                <input type="radio" id="tip-15" name="tip" value="15" checked />
+                <label for="tip-15">15%</label>
+              </div>
+              <div class="tip-radio">
+                <input type="radio" id="tip-25" name="tip" value="25" />
+                <label for="tip-25">25%</label>
+              </div>
+              <div class="tip-radio">
+                <input type="radio" id="tip-50" name="tip" value="50" />
+                <label for="tip-50">50%</label>
+              </div>
+              <div class="tip-radio">
+                <input type="number" id="custom-input" />
+              </div>
+            </div>
+          </div>
+          <!-- form tip end -->
+          <!-- form people -->
+          <div class="calculator__form-people">
+            <div class="people-header">
+              <label class="people-label" for="people">Number of people</label>
+              <p id="people-error">Can't be zero or negative</p>
+            </div>
+            <input id="people" type="number" value="5" />
+          </div>
+          <!-- form people end-->
+        </div>
+        <!-- calculator form end -->
+        <!-- calculator output -->
+        <div class="calculator__output">
+          <!-- output results-->
+          <div class="output-results">
+            <div class="results-tip">
+              <div class="results-title">
+                <p>Tip Amount</p>
+                <p>/ person</p>
+              </div>
+              <p class="amounts">$<spin id="tip-amount">3.00</spin></p>
+            </div>
+            <div class="results-total">
+              <div class="results-title">
+                <p>Total</p>
+                <p>/ person</p>
+              </div>
+              <p class="amounts">$<spin id="total-amount">23.00</spin></p>
+            </div>
+          </div>
+          <!-- output results end -->
+          <!-- output reset -->
+          <div>
+            <button id="reset-button">RESET</button>
+          </div>
+          <!-- output reset end -->
+        </div>
+        <!-- calculator output end-->
+      </div>
+      <!-- calculator end -->
+    </main>
+  </body>
+</html>
