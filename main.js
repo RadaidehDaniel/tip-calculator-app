@@ -28,9 +28,22 @@ function isValid(value) {
 
 // FUNCTIONS
 
+function findLableForControl(el) {
+  var idVal = el.id;
+  labels = document.getElementsByTagName("label");
+  for (var i = 0; i < labels.length; i++) {
+    if (labels[i].htmlFor == idVal) return labels[i];
+  }
+}
+
 function tipValue() {
   for (i = 0; i < tipInputs.length; i++) {
+    findLableForControl(tipInputs[i]).classList.remove("active");
+  }
+
+  for (i = 0; i < tipInputs.length; i++) {
     if (tipInputs[i].checked) {
+      findLableForControl(tipInputs[i]).classList.add("active");
       return tipInputs[i].value / 100;
     }
   }
@@ -49,6 +62,8 @@ function handleRender(bill, tip, people) {
 }
 
 function handleChange() {
+  resetBtn.classList.add("active-reset");
+
   const bill = Number(billInput.value);
   const tip = tipValue();
   const people = Number(peopleInput.value);
@@ -79,16 +94,21 @@ function handleChange() {
 function unCheck() {
   for (i = 0; i < tipInputs.length; i++) {
     tipInputs[i].checked = false;
+    findLableForControl(tipInputs[i]).classList.remove("active");
   }
 }
 
 function resetHandle() {
-  billInput.value = "100";
+  billInput.value = "0";
   tipInputs[2].checked = true;
   customInput.value = "";
-  peopleInput.value = "5";
-  tipAmount.textContent = "3.00";
-  totalAmount.textContent = "23.00";
+  peopleInput.value = "0";
+  tipAmount.textContent = "0.00";
+  totalAmount.textContent = "0.00";
+  resetBtn.classList.remove("active-reset");
+  errorBillMsg.style.display = "none";
+  errorPeoplelMsg.style.display = "none";
+  errorTipMsg.style.display = "none";
 }
 
 // EXCUTION

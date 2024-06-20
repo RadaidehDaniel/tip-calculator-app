@@ -3,3 +3,241 @@
 #people-error {
   display: none;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --font-regular: 400;
+  --font-bold: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  /* 400 or 700 */
+  font-weight: 400;
+  /* normal or italic */
+  font-style: normal;
+  width: 100%;
+  height: 100vh;
+  background-color: hsl(185, 41%, 84%);
+}
+
+/* LOGO */
+/* ==== */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem 0 4rem 0;
+}
+header svg {
+  max-inline-size: 8.666rem;
+}
+
+/* CALCULATOR */
+/* ========== */
+
+.calculator {
+  background-color: #fff;
+  padding: 3.2rem;
+  border-top-left-radius: 2.5rem;
+  border-top-right-radius: 2.5rem;
+
+  display: flex;
+
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+/* FORM */
+/* ==== */
+
+.calculator__form {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+/* LABEL */
+/* ===== */
+
+.input-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-end: 0.6rem;
+}
+
+.label-style {
+  font-size: 1.6rem;
+  font-weight: var(--font-bold);
+  color: #5e7a7d;
+}
+
+.error-style {
+  font-size: 1.6rem;
+  font-weight: var(--font-bold);
+  color: #e17457;
+}
+
+/* INPUT Bill + People */
+/* =================== */
+
+.input-style {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background-color: #f3f9fa;
+  font-size: var(--font-bold);
+  font-size: 2.4rem;
+  color: #00474b;
+  text-align: right;
+}
+
+.input-body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-body img {
+  position: absolute;
+  left: 1.6rem;
+  top: 1.2rem;
+}
+
+/* TIPS */
+/* ==== */
+
+.tip-options {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+  margin-block-start: 1.2rem;
+}
+
+.tip-radio {
+  inline-size: 14.6rem;
+  block-size: 4.8rem;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.tip-radio input {
+  appearance: none;
+}
+
+.tip-radio label {
+  font-size: 2.4rem;
+  font-weight: var(--font-bold);
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #00474b;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.tip-radio label.active {
+  background-color: #26c2ae;
+  color: #00474b;
+}
+
+/* CUSTOM */
+/* ====== */
+
+#custom-input {
+  inline-size: 14.6rem;
+  block-size: 4.8rem;
+  background-color: #f3f9fa;
+  color: #547878;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 2.4rem;
+  font-weight: var(--font-bold);
+  text-align: center;
+}
+
+/* OUTPUT */
+/* ====== */
+
+.calculator__output {
+  border-radius: 1.5rem;
+  background-color: #00474b;
+  padding: 3.7rem 2.4rem 2.4rem 2.4rem;
+}
+
+.results {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-end: 2.2rem;
+}
+
+.results-title p:first-child {
+  color: #fff;
+  font-weight: var(--font-bold);
+  font-size: 1.6rem;
+}
+
+.results-title p:last-child {
+  color: #7f9d9f;
+  font-weight: var(--font-bold);
+  font-size: 1.3rem;
+}
+
+.amounts {
+  color: #26c2ae;
+  font-weight: var(--font-bold);
+  font-size: 3.2rem;
+}
+
+.reset-container {
+  margin-block-start: 1rem;
+  display: grid;
+}
+
+#reset-button {
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #0d686d;
+  color: #00474b;
+
+  font-size: 2rem;
+  font-weight: var(--font-bold);
+  padding: 0.8rem;
+}
+
+#reset-button.active-reset {
+  background-color: #26c2ae;
+  color: #00474b;
+}
