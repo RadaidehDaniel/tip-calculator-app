@@ -63,6 +63,12 @@ header svg {
 /* CALCULATOR */
 /* ========== */
 
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .calculator {
   background-color: #fff;
   padding: 3.2rem;
@@ -117,6 +123,7 @@ header svg {
   font-size: 2.4rem;
   color: #00474b;
   text-align: right;
+  min-inline-size: 100%;
 }
 
 .input-body {
@@ -147,8 +154,8 @@ header svg {
   inline-size: 14.6rem;
   block-size: 4.8rem;
   display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
+  align-items: center;
+  justify-content: center;
 }
 
 .tip-radio input {
@@ -240,4 +247,33 @@ header svg {
 #reset-button.active-reset {
   background-color: #26c2ae;
   color: #00474b;
+}
+
+@media screen and (min-width: 650px) {
+  .calculator {
+    flex-direction: row;
+    gap: 4.8rem;
+    max-inline-size: 92rem;
+    border-radius: 2.5rem;
+  }
+
+  .calculator__form {
+    inline-size: 37.9rem;
+  }
+
+  .tip-radio {
+    inline-size: 11.7rem;
+  }
+
+  .tip-options {
+    gap: 1.2rem;
+  }
+
+  #custom-input {
+    inline-size: 11.7rem;
+  }
+
+  .calculator__output {
+    inline-size: 41.7rem;
+  }
 }
